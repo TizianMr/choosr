@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppBar from './components/AppBar.vue'
+import HomeView from './views/HomeView.vue'
 </script>
 
 <template>
@@ -7,7 +8,5 @@ import AppBar from './components/AppBar.vue'
     <AppBar />
   </header>
 
-  <main><p>Hello World</p></main>
+  <main><HomeView /></main>
 </template>
-
-<style scoped></style>

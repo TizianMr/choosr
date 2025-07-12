@@ -52,7 +52,9 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  width: 80%;
+  margin: 0 auto;
+  color: white;
   background: linear-gradient(90deg, #ED4264 0%, #FFEDBC 100%);
   transition:
     color 0.5s,
