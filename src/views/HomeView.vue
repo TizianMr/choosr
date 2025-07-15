@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import OptionsCard from '../components/OptionsCard.vue'
+import { POLL_OPTIONS } from '@/utils/constants'
 </script>
 
 <template>
@@ -7,10 +8,12 @@ import OptionsCard from '../components/OptionsCard.vue'
   <h2>Choose your option</h2>
 
   <div class="flex flex-col justify-center items-center gap-4 pt-8">
-    <OptionsCard title="Test" description="Lorem ipsum" />
-    <!-- <OptionsCard />
-    <OptionsCard />
-    <OptionsCard /> -->
+    <OptionsCard
+      v-for="option in POLL_OPTIONS"
+      :key="option.title"
+      :title="option.title"
+      :description="option.description"
+    />
   </div>
 </template>
 
