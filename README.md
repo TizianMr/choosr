@@ -1,8 +1,36 @@
+> [!CAUTION]
+> Choosr is still under development. Features, functionalities, and the user interface may change as the project evolves.
+
+<div align='center'>
+    <img src="./public/logo.png" alt='choosr logo'/>
+</div>
+
+<p align="center" title="Build Status">
+  <a href="https://github.com/TizianMr/choosr/actions/workflows/ci.yml">
+    <img src="https://github.com/TizianMr/choosr/actions/workflows/ci.yml/badge.svg" alt="build status"/>
+  </a>
+</p>
+
 # choosr
 
-This template should help get you started developing with Vue 3 in Vite.
+Choosr is an open-source platform that lets users create polls with ease, including binary polls, single-choice, multi-choice, and appointment polls, making decision-making simple and collaborative.
 
-## Recommended IDE Setup
+## Techstack
+
+[Vue](https://vuejs.org/) as frontend framework\
+[TailwindCSS](https://tailwindcss.com/) as CSS framework\
+[Flowbite](https://flowbite.com/) as component library\
+[Vitest](https://vitest.dev/) as testing framework
+
+## How to install
+
+### Prerequisites
+
+- [bun](https://bun.com/) installed on machine
+
+### Project setup
+
+<!-- ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
@@ -12,33 +40,38 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 ## Customize configuration
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+See [Vite Configuration Reference](https://vite.dev/config/). -->
 
-## Project Setup
-
+Install all dependencies by running:
 ```sh
 bun install
 ```
 
-### Compile and Hot-Reload for Development
-
+Run the dev server by executing:
 ```sh
 bun dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
+For building you app for production (type-check, compile and minify for production), run:
 ```sh
 bun run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Linting and testing
+
+Run Unit Tests with [Vitest](https://vitest.dev/) by executing:
 
 ```sh
-bun test:unit
+bun run test
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+To get the test coverage, you can run:
+
+```sh
+bun run test:coverage
+```
+
+To lint with [ESLint](https://eslint.org/), run:
 
 ```sh
 bun lint

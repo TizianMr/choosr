@@ -1,4 +1,4 @@
-name: Run linting checks and unit tests
+name: Linting and unit testing
 
 on:
   pull_request:
