@@ -7,7 +7,5 @@ import AppBar from './components/AppBar.vue'
     <AppBar />
   </header>
 
-  <main><p>Hello World</p></main>
+  <main><RouterView /></main>
 </template>
-
-<style scoped></style>
