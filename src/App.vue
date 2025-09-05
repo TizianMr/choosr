@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppBar from './components/AppBar.vue'
+import PageHeader from './components/PageHeader.vue'
 </script>
 
 <template>
@@ -7,5 +8,8 @@ import AppBar from './components/AppBar.vue'
     <AppBar />
   </header>
 
-  <main><RouterView /></main>
+  <main>
+    <PageHeader />
+    <RouterView />
+  </main>
 </template>

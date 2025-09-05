@@ -1,10 +1,17 @@
-import { createWebHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter, type RouteRecordRaw } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
 import BinaryPollView from '@/views/BinaryPollView.vue'
 import SingleChoicePollView from '@/views/SingleChoicePollView.vue'
 import AppointmentPollView from '@/views/AppointmentPollView.vue'
 import MultiChoicePollView from '@/views/MultiChoicePollView.vue'
+
+declare module 'vue-router' {
+  interface RouteMeta {
+    title: string
+    subtitle: string
+  }
+}
 
 export const ROUTES = {
   home: '/',
@@ -14,9 +21,21 @@ export const ROUTES = {
   appointmentPoll: '/appointment',
 } as const
 
-const routes = [
-  { path: ROUTES.home, component: HomeView },
-  { path: ROUTES.binaryPoll, component: BinaryPollView },
+const routes: RouteRecordRaw[] = [
+  {
+    path: ROUTES.home,
+    component: HomeView,
+    meta: { title: 'Create your own poll!', subtitle: 'Choose your option' },
+  },
+  {
+    path: ROUTES.binaryPoll,
+    component: BinaryPollView,
+    meta: {
+      title: 'Binary poll',
+      subtitle:
+        'Binary polls are a great option if you want to ask for an opinion between two topics, compare preferences, or get a clear yes/no answer without confusion',
+    },
+  },
   { path: ROUTES.singleChoicePoll, component: SingleChoicePollView },
   { path: ROUTES.multiChoicePoll, component: MultiChoicePollView },
   { path: ROUTES.appointmentPoll, component: AppointmentPollView },

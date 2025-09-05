@@ -35,30 +35,9 @@ const pollOptions: Ref<PollOption[]> = ref([
 </script>
 
 <template>
-  <h1>Create your own poll!</h1>
-  <h2>Choose your option</h2>
-
   <div class="flex flex-col justify-center items-center gap-4 pt-8">
     <RouterLink v-for="option in pollOptions" :key="option.title" :to="option.route">
       <OptionsCard :title="option.title" :description="option.description" />
     </RouterLink>
   </div>
 </template>
-
-<style scoped>
-h1,
-h2 {
-  text-align: center;
-}
-
-h1 {
-  font-weight: 800;
-  font-size: 3rem;
-  padding-top: 5rem;
-}
-
-h2 {
-  font-weight: 800;
-  font-size: 1.5rem;
-}
-</style>
