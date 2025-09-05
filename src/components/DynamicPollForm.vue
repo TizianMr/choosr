@@ -84,6 +84,7 @@ const removeChoice = (index: number) => {
         @click="addChoice"
         class="cursor-pointer border-2 border-dashed border-blue-500 hover:border-blue-700 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         type="button"
+        data-testid="add-button"
       >
         <div class="flex justify-center gap-1"><IoAddCircleOutline /> Add option</div>
       </button>
