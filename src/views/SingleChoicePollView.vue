@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { IoAddCircleOutline } from 'vue-icons-plus/io'
+import { IoAddCircleOutline, IoRemoveCircleOutline } from 'vue-icons-plus/io'
 
 const placeholders = [
   'Pizza 🍕',
@@ -22,6 +22,10 @@ const choices = ref([
 
 const addChoice = () => {
   choices.value.push({ value: '', placeholder: getRandomPlaceholder() })
+}
+
+const removeChoice = (index: number) => {
+  choices.value.splice(index, 1)
 }
 </script>
 
@@ -45,13 +49,23 @@ const addChoice = () => {
           <label class="block text-sm font-bold mb-2" :for="`option${idx}`">
             Option {{ idx + 1 }}
           </label>
-          <input
-            v-model="choice.value"
-            class="shadow appearance-none border rounded w-full py-2 px-3 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            :id="`option${idx}`"
-            type="text"
-            :placeholder="choice.placeholder"
-          />
+          <div class="flex gap-1.5">
+            <input
+              v-model="choice.value"
+              class="shadow appearance-none border rounded w-full py-2 px-3 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              :id="`option${idx}`"
+              type="text"
+              :placeholder="choice.placeholder"
+            />
+            <button
+              v-if="choices.length > 2"
+              @click="removeChoice(idx)"
+              class="cursor-pointer text-red-500 hover:text-red-700 mt-1 text-sm"
+              type="button"
+            >
+              <IoRemoveCircleOutline />
+            </button>
+          </div>
         </div>
 
         <div class="mb-8 m-auto w-[90%]">
