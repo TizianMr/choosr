@@ -62,6 +62,7 @@ const removeChoice = (index: number) => {
               @click="removeChoice(idx)"
               class="cursor-pointer text-red-500 hover:text-red-700 mt-1 text-sm"
               type="button"
+              data-testid="remove-button"
             >
               <IoRemoveCircleOutline />
             </button>
