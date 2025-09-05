@@ -36,7 +36,15 @@ const routes: RouteRecordRaw[] = [
         'Binary polls are a great option if you want to ask for an opinion between two topics, compare preferences, or get a clear yes/no answer without confusion',
     },
   },
-  { path: ROUTES.singleChoicePoll, component: SingleChoicePollView },
+  {
+    path: ROUTES.singleChoicePoll,
+    component: SingleChoicePollView,
+    meta: {
+      title: 'Single Choice poll',
+      subtitle:
+        'Single-choice polls are ideal when you want participants to select one option from multiple possibilities, helping you identify the most popular choice or preference',
+    },
+  },
   { path: ROUTES.multiChoicePoll, component: MultiChoicePollView },
   { path: ROUTES.appointmentPoll, component: AppointmentPollView },
 ]
