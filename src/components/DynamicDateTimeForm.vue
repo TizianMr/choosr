@@ -8,7 +8,7 @@ const { defaultInputs } = defineProps<{
   defaultInputs?: DateTimeFormInput[]
 }>()
 
-const choices = ref(defaultInputs ?? [])
+const choices = ref(defaultInputs ? [...defaultInputs] : [])
 
 const addChoice = () => {
   choices.value.push({ date: '', time: '' })
