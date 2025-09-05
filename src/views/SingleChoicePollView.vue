@@ -1,5 +1,28 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { IoAddCircleOutline } from 'vue-icons-plus/io'
+
+const placeholders = [
+  'Pizza 🍕',
+  'Sushi 🍣',
+  'Burgers 🍔',
+  'Salad 🥗',
+  'Ice Cream 🍦',
+  'Chocolate 🍫',
+]
+const getRandomPlaceholder = () => {
+  const randomIndex = Math.floor(Math.random() * placeholders.length)
+  return placeholders[randomIndex]
+}
+
+const choices = ref([
+  { value: '', placeholder: getRandomPlaceholder() },
+  { value: '', placeholder: getRandomPlaceholder() },
+])
+
+const addChoice = () => {
+  choices.value.push({ value: '', placeholder: getRandomPlaceholder() })
+}
 </script>
 
 <template>
@@ -18,28 +41,22 @@ import { IoAddCircleOutline } from 'vue-icons-plus/io'
       </div>
 
       <div class="w-fullflex items-center flex-col">
-        <div class="mb-4 m-auto w-[90%]">
-          <label class="block text-sm font-bold mb-2" for="optionA"> Option A </label>
+        <div v-for="(choice, idx) in choices" :key="idx" class="mb-4 m-auto w-[90%]">
+          <label class="block text-sm font-bold mb-2" :for="`option${idx}`">
+            Option {{ idx + 1 }}
+          </label>
           <input
+            v-model="choice.value"
             class="shadow appearance-none border rounded w-full py-2 px-3 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="optionA"
+            :id="`option${idx}`"
             type="text"
-            placeholder="Pizza 🍕"
-          />
-        </div>
-
-        <div class="mb-8 m-auto w-[90%]">
-          <label class="block text-sm font-bold mb-2" for="optionB"> Option B </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="optionB"
-            type="text"
-            placeholder="Tacos 🌮"
+            :placeholder="choice.placeholder"
           />
         </div>
 
         <div class="mb-8 m-auto w-[90%]">
           <button
+            @click="addChoice"
             class="cursor-pointer border-2 border-dashed border-blue-500 hover:border-blue-700 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
           >
