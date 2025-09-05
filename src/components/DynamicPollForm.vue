@@ -53,7 +53,7 @@ const removeChoice = (index: number) => {
       />
     </div>
 
-    <div class="w-fullflex items-center flex-col">
+    <div class="w-fullflex items-center flex-col max-h-[50vh] overflow-y-auto">
       <div v-for="(input, idx) in choices" :key="idx" class="mb-4 m-auto w-[90%]">
         <label class="block text-sm font-bold mb-2" :for="`option${idx}`">
           Option {{ idx + 1 }}
@@ -77,16 +77,16 @@ const removeChoice = (index: number) => {
           </button>
         </div>
       </div>
+    </div>
 
-      <div class="mb-8 m-auto w-[90%]">
-        <button
-          @click="addChoice"
-          class="cursor-pointer border-2 border-dashed border-blue-500 hover:border-blue-700 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
-        >
-          <div class="flex justify-center gap-1"><IoAddCircleOutline /> Add option</div>
-        </button>
-      </div>
+    <div class="mb-8 mt-6 m-auto w-[90%]">
+      <button
+        @click="addChoice"
+        class="cursor-pointer border-2 border-dashed border-blue-500 hover:border-blue-700 hover:bg-blue-700 w-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        type="button"
+      >
+        <div class="flex justify-center gap-1"><IoAddCircleOutline /> Add option</div>
+      </button>
     </div>
 
     <div class="flex items-center justify-end">
