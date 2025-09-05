@@ -54,7 +54,15 @@ const routes: RouteRecordRaw[] = [
         'Multi-choice polls are a great option when you want participants to select several answers at once, making them perfect for capturing a wider range of opinions or preferences',
     },
   },
-  { path: ROUTES.appointmentPoll, component: AppointmentPollView },
+  {
+    path: ROUTES.appointmentPoll,
+    component: AppointmentPollView,
+    meta: {
+      title: 'Appointment poll',
+      subtitle:
+        'Appointment polls are a great option when you need to find the best time that works for everyone by letting participants vote on their availability',
+    },
+  },
 ]
 
 const router = createRouter({
