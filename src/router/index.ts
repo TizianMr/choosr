@@ -45,7 +45,15 @@ const routes: RouteRecordRaw[] = [
         'Single-choice polls are ideal when you want participants to select one option from multiple possibilities, helping you identify the most popular choice or preference',
     },
   },
-  { path: ROUTES.multiChoicePoll, component: MultiChoicePollView },
+  {
+    path: ROUTES.multiChoicePoll,
+    component: MultiChoicePollView,
+    meta: {
+      title: 'Multi Choice poll',
+      subtitle:
+        'Multi-choice polls are a great option when you want participants to select several answers at once, making them perfect for capturing a wider range of opinions or preferences',
+    },
+  },
   { path: ROUTES.appointmentPoll, component: AppointmentPollView },
 ]
 

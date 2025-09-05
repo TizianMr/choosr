@@ -10,5 +10,7 @@ const multiChoicePollInputs: Ref<FormInputWithoutLabel[]> = ref([
 </script>
 
 <template>
-  <DynamicForm :default-inputs="multiChoicePollInputs" />
+  <div class="m-auto w-[60vw] pt-8">
+    <DynamicForm :default-inputs="multiChoicePollInputs" />
+  </div>
 </template>
