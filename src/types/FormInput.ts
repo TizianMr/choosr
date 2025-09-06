@@ -8,3 +8,8 @@ export type FormInput = {
 }
 
 export type FormInputWithoutLabel = Omit<FormInput, 'label'>
+
+export type DateTimeFormInput = {
+  date: string
+  time: string
+}

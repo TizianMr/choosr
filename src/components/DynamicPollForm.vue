@@ -53,7 +53,7 @@ const removeChoice = (index: number) => {
       />
     </div>
 
-    <div class="w-fullflex items-center flex-col max-h-[50vh] overflow-y-auto">
+    <div class="items-center flex-col max-h-[50vh] overflow-y-auto">
       <div v-for="(input, idx) in choices" :key="idx" class="mb-4 m-auto w-[90%]">
         <label class="block text-sm font-bold mb-2" :for="`option${idx}`">
           Option {{ idx + 1 }}
