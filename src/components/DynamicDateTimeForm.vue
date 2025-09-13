@@ -3,6 +3,7 @@ import type { DateTimeFormInput } from '@/types/FormInput'
 import { initFlowbite } from 'flowbite'
 import { onMounted, ref } from 'vue'
 import { IoAddCircleOutline, IoRemoveCircleOutline } from 'vue-icons-plus/io'
+import PollOptions from './PollOptions.vue'
 
 const { defaultInputs } = defineProps<{
   defaultInputs?: DateTimeFormInput[]
@@ -37,7 +38,7 @@ onMounted(() => {
       />
     </div>
 
-    <div class="max-h-[50vh] overflow-y-auto">
+    <div class="max-h-[33vh] overflow-y-auto">
       <div v-for="(_, idx) in choices" :key="idx" class="flex gap-2.5 w-[90%] m-auto mb-4">
         <div class="flex flex-col flex-1/3">
           <label class="block text-sm font-bold mb-2" :for="`dateOption${idx}`">
@@ -121,6 +122,8 @@ onMounted(() => {
         <div class="flex justify-center gap-1"><IoAddCircleOutline /> Add option</div>
       </button>
     </div>
+
+    <PollOptions />
 
     <div class="flex items-center justify-end">
       <button
