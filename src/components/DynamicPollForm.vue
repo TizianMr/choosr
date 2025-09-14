@@ -2,6 +2,7 @@
 import type { FormInputWithoutLabel } from '@/types/FormInput'
 import { ref } from 'vue'
 import { IoAddCircleOutline, IoRemoveCircleOutline } from 'vue-icons-plus/io'
+import PollOptions from './PollOptions.vue'
 
 const { defaultInputs } = defineProps<{
   defaultInputs?: FormInputWithoutLabel[]
@@ -53,7 +54,7 @@ const removeChoice = (index: number) => {
       />
     </div>
 
-    <div class="items-center flex-col max-h-[50vh] overflow-y-auto">
+    <div class="items-center flex-col max-h-[33vh] overflow-y-auto">
       <div v-for="(input, idx) in choices" :key="idx" class="mb-4 m-auto w-[90%]">
         <label class="block text-sm font-bold mb-2" :for="`option${idx}`">
           Option {{ idx + 1 }}
@@ -89,6 +90,8 @@ const removeChoice = (index: number) => {
         <div class="flex justify-center gap-1"><IoAddCircleOutline /> Add option</div>
       </button>
     </div>
+
+    <PollOptions />
 
     <div class="flex items-center justify-end">
       <button

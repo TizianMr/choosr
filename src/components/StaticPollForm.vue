@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { FormInput } from '@/types/FormInput'
+import PollOptions from './PollOptions.vue'
 
 defineProps<{
   inputs: FormInput[]
@@ -31,6 +32,8 @@ defineProps<{
         />
       </div>
     </div>
+
+    <PollOptions />
 
     <div class="flex items-center justify-end">
       <button
